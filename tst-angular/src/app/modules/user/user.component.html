@@ -1,0 +1,74 @@
+<div class="content-inner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <div class="p-sm-5">
+                    <div class="alert form-alert">
+                        Please complete all the details below to add user. *fields are required
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <form role="form" [formGroup]="addUserForm">
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="First Name *">
+                                            <small class="error" *ngIf="addUserForm.controls.firstName.touched && addUserForm.controls.firstName.invalid">
+                                                <div>First Name is required</div>
+                                            </small>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Last Name *">
+                                            <small class="error" *ngIf="addUserForm.controls.lastName.touched && addUserForm.controls.lastName.invalid">
+                                                <div>Last Name is required</div>
+                                            </small>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Email *">
+                                            <small class="error" *ngIf="addUserForm.controls.email.touched && addUserForm.controls.email.invalid">
+                                                <div>Email is required</div>
+                                            </small>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password *">
+                                            <small class="error" *ngIf="addUserForm.controls.password.touched && addUserForm.controls.password.invalid">
+                                                <div>Password is required</div>
+                                            </small>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" formControlName="dob" id="dob" placeholder="Date of Birth *">
+                                            <small class="error" *ngIf="addUserForm.controls.dob.touched && addUserForm.controls.dob.invalid">
+                                                <div>Date of birth is required</div>
+                                            </small>
+                                        </div>
+                                        <div class="input-group">
+                                            <select id="role" class="custom-select" formControlName="role">
+                                                <option value='' disabled selected hidden>Select Role *</option>
+                                                <option value='Admin'>Admin</option>
+                                                <option value='Manager'>Manager</option>
+                                                <option value='User'>User</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" formControlName="city" id="city" placeholder="City *">
+                                            <small class="error" *ngIf="addUserForm.controls.city.touched && addUserForm.controls.city.invalid">
+                                                <div>City is required</div>
+                                            </small>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" formControlName="state" id="state" placeholder="State *">
+                                            <small class="error" *ngIf="addUserForm.controls.state.touched && addUserForm.controls.state.invalid">
+                                                <div>State is required</div>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right" (click)="OnSubmit()">Add User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
